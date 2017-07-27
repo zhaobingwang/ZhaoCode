@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ThreeInheritance
 {
-    [Table("Vendors")]
+    //[Table("Vendors")]
     public class Vendor:Person
     {
         public decimal HourlyRate { get; set; }
