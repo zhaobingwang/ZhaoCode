@@ -14,5 +14,20 @@ namespace ThreeInheritance
 
         }
         public virtual DbSet<Person> Person { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Employee>().Map(m =>
+            {
+                m.MapInheritedProperties(); //MapInheritedProperties()方法将继承的属性映射到表中
+                m.ToTable("Employees");
+            });
+            modelBuilder.Entity<Vendor>().Map(m =>
+            {
+                m.MapInheritedProperties();
+                m.ToTable("Vendors");
+            });
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
