@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataOperation
 {
-    public class Company
+    public class Location
     {
-        public Company()
+        public Location()
         {
             Employers = new HashSet<Employer>();
         }

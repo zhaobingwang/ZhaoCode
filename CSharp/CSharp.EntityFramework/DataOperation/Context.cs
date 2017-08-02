@@ -14,6 +14,8 @@ namespace DataOperation
             Database.SetInitializer<Context>(new SeedingTestDataInitialzer());
         }
         public DbSet<Employer> Employers { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Location> Locations { get; set; }
 
     }
 }
