@@ -51,11 +51,15 @@ namespace DataOperation
                 //Console.WriteLine("COMPANY DATA END---");
 
                 #region 使用导航属性
-                var employers = from l in db.Locations
-                                where l.Name == "杭州"
-                                from e in l.Employers
-                                where e.Id>5
-                                select e;
+                //查询语法
+                //var employers = from l in db.Locations
+                //                where l.Name == "杭州"
+                //                from e in l.Employers
+                //                where e.Id>5
+                //                select e;
+
+                //方法语法
+                var employers = db.Locations.Where(l => l.Name == "杭州").SelectMany(e => e.Employers);
                 foreach (var employer in employers)
                 {
                     Console.WriteLine("{0}\t{1}",employer.EmployerName,employer.Location.Name);
