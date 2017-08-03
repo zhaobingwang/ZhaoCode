@@ -52,6 +52,23 @@ namespace DataOperation
             employer2.Companies.Add(company);
             employer2.Location = location;
             context.Employers.Add(employer2);
+
+            var employer3 = new Employer
+            {
+                EmployerName = "李四",
+            };
+            employer3.Companies.Add(company2);
+            employer3.Location = location2;
+            context.Employers.Add(employer3);
+
+            var employer4 = new Employer
+            {
+                EmployerName = "王五",
+            };
+            employer4.Companies.Add(company2);
+            employer4.Location = location2;
+            context.Employers.Add(employer4);
+
             context.SaveChanges();
 
             base.Seed(context);
