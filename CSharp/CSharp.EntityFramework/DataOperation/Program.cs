@@ -203,6 +203,54 @@ namespace DataOperation
                 //    }
                 //}
                 #endregion
+
+                #region 多表连接
+                //var join = from l in db.Locations
+                //            join e in db.Employers on l.Id equals e.Location.Id
+                //            into employerList   // 注意，这里的employerList是属于某个地方的所有员工，不是两张表join之后的结果集
+                //            select new
+                //            {
+                //                LocationName = l.Name,
+                //                EmployerList = employerList
+                //            };
+
+                //var join = db.Locations.GroupJoin(db.Employers,
+                //    l => l.Id,    //左表要连接的键
+                //    e => e.Location.Id,   //右表要连接的键
+                //    (l, employerGroup) => new
+                //    {
+                //        LocationName = l.Name,
+                //        EmployerList = employerGroup
+                //    }
+                //    );
+
+                //foreach (var item in join)
+                //{
+                //    Console.WriteLine(item.LocationName);
+                //    foreach (var item2 in item.EmployerList)
+                //    {
+                //        Console.WriteLine(item2.EmployerName);
+                //    }
+                //}
+                #endregion
+
+                #region 延迟加载
+                //var employer = db.Employers;    //还没有查询数据库
+                //var employerList = employer.ToList();   //已经查询了数据库，但是由于延时加载的存在，还没有加载location表的数据
+                //var location = employerList.ElementAt(0).Location;    //因为用户访问了location表的数据，因此这个时候才加载
+                #endregion
+
+                #region 预加载
+                /*
+                 *  1中的参数为lambda表达式的没有？
+                 *  2，3有区别？
+                 */
+
+
+                //var employer1 = db.Employers.Include(e=>e.Location".ToList();
+                //var employer2 = db.Employers.Include("Location").ToList();
+                //var employer3 = db.Employers.ToList();
+                #endregion
             }
 
         }
