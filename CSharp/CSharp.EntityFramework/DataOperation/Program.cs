@@ -253,13 +253,141 @@ namespace DataOperation
                 #endregion
             }
 
+            #region 插入数据
+            //var location = new Location { Name = "北京" };
+            //location.Employers.Add(new Employer { EmployerName = "王五" });
+            //location.Employers.Add(new Employer { EmployerName = "Jack" });
+            //var location2 = new Location { Name = "广州" };
+            //location2.Employers.Add(new Employer { EmployerName = "张飞" });
+            //using (var db=new Context())
+            //{
+            //    db.Locations.Add(location);
+            //    db.Entry(location2).State = System.Data.Entity.EntityState.Added;
+            //    db.SaveChanges();
+            //    foreach (var l in db.Locations)
+            //    {
+            //        Console.WriteLine(l.Name);
+            //        foreach (var e in l.Employers)
+            //        {
+            //            Console.WriteLine("\t{0}",e.EmployerName);
+            //        }
+            //    }
+            //}
+            #endregion
+
+            #region 更新数据
+            //using (var db=new Context())
+            //{
+            //    var employer = db.Employers.Find(1);
+            //    employer.EmployerName = "改名字了222";
+            //    //db.Entry(employer).State = System.Data.Entity.EntityState.Modified;
+            //    db.SaveChanges();
+            //    foreach (var item in db.Employers)
+            //    {
+            //        Console.WriteLine("{0}",item.EmployerName);
+            //    }
+            //}
+            #endregion
+
+            #region 状态追踪
+            //using (var db=new Context())
+            //{
+            //    var location1 = db.Locations.Include("Employers");
+            //    foreach (var l in location1)
+            //    {
+            //        Console.WriteLine("位置追踪状态：{0}",db.Entry(l).State);
+            //        foreach (var employer in l.Employers)
+            //        {
+            //            Console.WriteLine("员工的追踪状态：{0}",db.Entry(employer).State);
+            //        }
+            //        Console.WriteLine("****************************");
+            //    }
+
+            //    var location2 = db.Locations.Include("Employers").AsNoTracking();   ///使用AsNoTracking()方法设置不再追踪该实体
+
+            //    Console.WriteLine(Environment.NewLine);
+            //    Console.WriteLine("使用了AsNoTracking()方法之后");
+            //    foreach (var l in location2)
+            //    {
+            //        Console.WriteLine("位置追踪状态：{0}", db.Entry(l).State);
+            //        foreach (var employer in l.Employers)
+            //        {
+            //            Console.WriteLine("员工的追踪状态：{0}", db.Entry(employer).State);
+            //        }
+            //        Console.WriteLine("****************************");
+            //    }
+            //}
+            #endregion
+
+            #region 删除数据
+            //using (var db = new Context())
+            //{
+            //    PrintAllEmployers(db);
+            //    var toDelete = db.Locations.Find(2);
+            //    toDelete.Employers.ToList().ForEach(e => db.Employers.Remove(e));
+            //    db.Locations.Remove(toDelete);
+            //    db.SaveChanges();
+            //    PrintAllEmployers(db);
+            //}
+
+            //方法2：通过设置实体状态删除
+            //var toDeleteLocation = new Location { Id = 3 };
+            //toDeleteLocation.Employers.Add(new Employer { Id = 15 });
+            //toDeleteLocation.Employers.Add(new Employer { Id = 14 });
+            //using (var db = new Context())
+            //{
+            //    PrintAllEmployers(db);  //删除前先输出现有的数据,不能写在下面的using语句中，否则Attach方法会报错
+            //}
+            //using (var db=new Context())
+            //{
+            //    db.Locations.Attach(toDeleteLocation);
+            //    foreach (var employer in toDeleteLocation.Employers.ToList())
+            //    {
+            //        db.Entry(employer).State = System.Data.Entity.EntityState.Deleted;
+            //    }
+            //    db.Entry(toDeleteLocation).State = System.Data.Entity.EntityState.Deleted;  //删除完子实体，再删除父实体
+            //    db.SaveChanges();
+            //    Console.WriteLine("删除之后的数据如下：\r\n");
+            //    PrintAllEmployers(db);
+            //}
+            #endregion
+
+            #region 使用内存数据
+            using (var db=new Context())
+            {
+                //14.1 证明Find方法先去内存中寻找数据
+                //Find方法在构建数据库查询之前，会先去本地的上下文中搜索
+                var location = db.Locations.ToList();
+                //var query = db.Locations.Find(4);
+
+                //14.2 ChangeTracker的使用
+                //通过ChangeTracker对象，我们可以访问内存中所有实体的状态，也可以查看这些实体以及它们的DbChangeTracker
+                foreach (var dbEntityEntry in db.ChangeTracker.Entries<Location>())
+                {
+                    Console.WriteLine(dbEntityEntry.State);
+                    Console.WriteLine(dbEntityEntry.Entity.Name);
+                }
+            }
+            #endregion
         }
         static void PrintEmployers(IQueryable<Employer> employers)
         {
             Console.WriteLine("Id\tName\t");
             foreach (var employer in employers)
             {
-                Console.WriteLine("{0}\t{1}", employer.Id, employer.EmployerName);
+                Console.WriteLine("{0}\t{1}\t{2}", employer.Id, employer.EmployerName,employer.Location.Name);
+            }
+        }
+        static void PrintAllEmployers(Context db)
+        {
+            var locations = db.Locations.ToList();
+            foreach (var location in locations)
+            {
+                Console.WriteLine("{0}的员工：",location.Name);
+                foreach (var employer in location.Employers)
+                {
+                    Console.WriteLine("{0}\t{1}\t{2}",employer.Id,employer.EmployerName,employer.Location.Name);
+                }
             }
         }
     }
