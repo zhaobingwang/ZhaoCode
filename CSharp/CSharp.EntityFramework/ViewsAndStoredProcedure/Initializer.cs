@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ViewsAndStoredProcedure
 {
-    public class Initializer : DropCreateDatabaseAlways<UsersContext>
+    public class Initializer : DropCreateDatabaseIfModelChanges<UsersContext>
     {
         protected override void Seed(UsersContext context)
         {
@@ -29,6 +29,11 @@ namespace ViewsAndStoredProcedure
             for (int i = 0; i < 5; i++)
             {
                 var user = new User { NickName = "用户" + (i + 1),RegTime=new DateTime(2017,08,08),IsDelete=0,Province=province1};
+                context.Users.Add(user);
+            }
+            for (int i = 5; i < 10; i++)
+            {
+                var user = new User { NickName = "用户" + (i + 1), RegTime = new DateTime(2017, 08, 08), IsDelete = 0, Province = province2 };
                 context.Users.Add(user);
             }
             #endregion

@@ -54,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Province.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserFromStoreProcedure.cs" />
     <Compile Include="UsersContext.cs" />
     <Compile Include="UserView.cs" />
     <Compile Include="UserViewMap.cs" />
