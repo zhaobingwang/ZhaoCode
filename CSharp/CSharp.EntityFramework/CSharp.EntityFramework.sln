@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataOperation", "DataOperat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewsAndStoredProcedure", "ViewsAndStoredProcedure\ViewsAndStoredProcedure.csproj", "{151CFDB6-D9E4-42C1-8A9E-26301BC6BE8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrencyAndTransaction", "ConcurrencyAndTransaction\ConcurrencyAndTransaction.csproj", "{1A4DD729-D956-4C97-B929-81C53749D06E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{151CFDB6-D9E4-42C1-8A9E-26301BC6BE8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{151CFDB6-D9E4-42C1-8A9E-26301BC6BE8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{151CFDB6-D9E4-42C1-8A9E-26301BC6BE8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A4DD729-D956-4C97-B929-81C53749D06E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A4DD729-D956-4C97-B929-81C53749D06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A4DD729-D956-4C97-B929-81C53749D06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A4DD729-D956-4C97-B929-81C53749D06E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
