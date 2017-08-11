@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewsAndStoredProcedure", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcurrencyAndTransaction", "ConcurrencyAndTransaction\ConcurrencyAndTransaction.csproj", "{1A4DD729-D956-4C97-B929-81C53749D06E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DatabaseMigrations", "DatabaseMigrations", "{6C7D835F-08C2-49EE-8F09-314A3EF97F2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{3242B7C6-7FD8-4226-9608-828F34BAA4BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaswMigrationApp", "DatabaswMigrationApp\DatabaswMigrationApp.csproj", "{8C064A72-E726-4BC7-ACFE-AF73F1A850B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +39,20 @@ Global
 		{1A4DD729-D956-4C97-B929-81C53749D06E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A4DD729-D956-4C97-B929-81C53749D06E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A4DD729-D956-4C97-B929-81C53749D06E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3242B7C6-7FD8-4226-9608-828F34BAA4BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3242B7C6-7FD8-4226-9608-828F34BAA4BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3242B7C6-7FD8-4226-9608-828F34BAA4BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3242B7C6-7FD8-4226-9608-828F34BAA4BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C064A72-E726-4BC7-ACFE-AF73F1A850B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C064A72-E726-4BC7-ACFE-AF73F1A850B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C064A72-E726-4BC7-ACFE-AF73F1A850B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C064A72-E726-4BC7-ACFE-AF73F1A850B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3242B7C6-7FD8-4226-9608-828F34BAA4BC} = {6C7D835F-08C2-49EE-8F09-314A3EF97F2E}
+		{8C064A72-E726-4BC7-ACFE-AF73F1A850B2} = {6C7D835F-08C2-49EE-8F09-314A3EF97F2E}
 	EndGlobalSection
 EndGlobal
