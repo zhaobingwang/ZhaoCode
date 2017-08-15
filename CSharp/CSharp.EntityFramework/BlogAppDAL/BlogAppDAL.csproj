@@ -54,6 +54,11 @@
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="Migrations\201708151449141_Initial-Database.cs" />
+    <Compile Include="Migrations\201708151449141_Initial-Database.Designer.cs">
+      <DependentUpon>201708151449141_Initial-Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="UOW\UnitOfWork.cs" />
@@ -64,6 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Repository\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708151449141_Initial-Database.resx">
+      <DependentUpon>201708151449141_Initial-Database.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
