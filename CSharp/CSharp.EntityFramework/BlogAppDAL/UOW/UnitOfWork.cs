@@ -52,7 +52,7 @@ namespace BlogAppDAL.UOW
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _context.Dispose();
         }
     }
 }
