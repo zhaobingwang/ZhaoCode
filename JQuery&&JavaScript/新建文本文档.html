@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        1111
+        <input type="text" id="userName_1" name="userName_11" value="Test">
+        <input type="text" id="userName_2" name="userName_11" value="Test">
+        <input type="text" id="userName_3" name="userName_11" value="Test">
+        <input type="text" id="userName_11" name="userName_11">
+    </div>
+</body>
+
+</html>
+<script src="./jquery-3.2.1.js"></script>
+<script>
+    $(function () {
+        for (var i = 1; i < 20; i++) {
+            if (i == 11) {
+                var start = new Date().getTime();
+                var test = $("#userName_" + i).length;
+                var test2 = $("#userName_" + i).val();
+                var end = new Date().getTime();
+                alert(test2=="");
+                console.log((end - start) + 'ms');
+            }
+        }
+
+    });
+</script>
