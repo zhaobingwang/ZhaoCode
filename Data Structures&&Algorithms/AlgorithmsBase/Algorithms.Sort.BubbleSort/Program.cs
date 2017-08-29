@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -12,19 +13,29 @@ namespace Algorithms.Sort.BubbleSort
         static void Main(string[] args)
         {
             List<int> list = new List<int>();
-            list = Seed(10);
+            int count = 1000;
+            int testCount = 10;
+            list = Seed(count);
             //原始数据
-            for (int i = 0; i < list.Count; i++)
-            {
-                Console.WriteLine(list[i]);
-            }
+            //for (int i = 0; i < list.Count; i++)
+            //{
+            //    Console.WriteLine(list[i]);
+            //}
             //排序后的数据
             Console.WriteLine("**************************");
-            list = BubbleSort(list);
-            for (int i = 0; i < list.Count; i++)
+            for (int i = 0; i < testCount; i++)
             {
-                Console.WriteLine(list[i]);
+                Stopwatch watch = new Stopwatch();
+                watch.Start();
+                list = BubbleSort(list);
+                watch.Stop();
+                Console.WriteLine($"第{i+1}次，冒泡排序{count}个数耗时：{watch.ElapsedMilliseconds}ms");
             }
+
+            //for (int i = 0; i < list.Count; i++)
+            //{
+            //    Console.WriteLine(list[i]);
+            //}
         }
         /// <summary>
         /// 冒泡排序算法
