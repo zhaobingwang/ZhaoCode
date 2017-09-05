@@ -10,6 +10,8 @@ namespace DailyCode.DotNet._201709
     {
         static void Main(string[] args)
         {
+            CSharp6 csharp6 = new CSharp6();
+            csharp6.ThrowArgumentNullExceptionUsingNameOf("");
         }
     }
 }
