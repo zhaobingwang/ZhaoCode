@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-3.3.7/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-table-1.11.1/bootstrap-table.css">
+
+    <script src="jquery/jquery-3.2.1.js"></script>
+    <script src="bootstrap-3.3.7/bootstrap.js"></script>
+    <script src="bootstrap-table-1.11.1/bootstrap-table.js"></script>
+    <script src="bootstrap-table-1.11.1/bootstrap-table-zh-CN.js"></script>
+    <script>
+        $(function () {
+            IntiTable();
+        });
+
+        function IntiTable() {
+            $('#table').bootstrapTable({
+                url: 'data/response.json',
+                sortName: 'id',
+                sortOrder: 'asc',
+                pagination: true,
+                sidePagination:'client',    //设置在哪里进行分页，可选值为 'client' 或者 'server'。
+                pageList:[10,20,50,100,500],    //如果设置了分页，设置可供选择的页面数据条数。设置为All 则显示所有记录。
+                pageSize:20,    //如果设置了分页，页面数据条数
+                pageNumber:1,   //如果设置了分页，首页页码
+                columns: [{
+                    field: '',
+                    checkbox: true
+                }, {
+                    field: 'id',
+                    title: 'Item ID'
+                }, {
+                    field: 'name',
+                    title: 'Item Name'
+                }, {
+                    field: 'price',
+                    title: 'Item Price'
+                }, ]
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <table id="table">
+        </table>
+    </div>
+</body>
+
+</html>
