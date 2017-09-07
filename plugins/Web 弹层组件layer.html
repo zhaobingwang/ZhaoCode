@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        body .skin1 {
+            width: 200px;
+            height: 100px;
+            background-color: red;
+            color: yellow;
+        }
+
+        body .skin2 {
+            width: 420px;
+            height: 240px;
+            background-color: #81BA25;
+            box-shadow: none;
+            color: #fff;
+        }
+    </style>
     <script src="jquery/jquery-3.2.1.js"></script>
     <script src="layer-3.0.3/layer.js"></script>
     <script>
@@ -55,16 +71,90 @@
                     break;
             }
         }
+
+        //页面层/iframe层
+        function testPages(type) {
+            switch (type) {
+                case 1:
+                    layer.open({
+                        type: 1,
+                        title: false,
+                        closeBtn: 0,
+                        shadeClose: true,
+                        skin: 'skin2',
+                        content: '自定义html'
+                    })
+                    break;
+                case 2:
+                    layer.open({
+                        type: 1,
+                        title: false,
+                        closeBtn: 0,
+                        area: '504px',
+                        skin: 'layui-layer-nobg',
+                        shadeClose: true,
+                        content: $('#img')
+                    });
+                    break;
+                case 3:
+                    //iframe层-父子操作
+                    layer.open({
+                        type: 2,
+                        area: ['700px', '450px'],
+                        fixed: false, //不固定
+                        maxmin: true,
+                        content: 'layer-child.html'
+                    });
+                    break;
+                case 4:
+                    //iframe层-多媒体
+                    layer.open({
+                        type: 2,
+                        title: false,
+                        area: ['630px', '360px'],
+                        shade: 0.8,
+                        closeBtn: 0,
+                        shadeClose: true,
+                        content: '//player.youku.com/embed/XMjY3MzgzODg0'
+                    });
+                    break;
+                case 5:
+                    //iframe层-禁滚动条
+                    layer.open({
+                        type: 2,
+                        area: ['360px', '500px'],
+                        skin: 'layui-layer-rim', //加上边框
+                        content: ['mobile/', 'no']
+                    });
+                    break;
+                default:
+                    break;
+            }
+        }
     </script>
 </head>
 
 <body>
     <h1>信息框</h1>
-    <a href="#" onclick="testMsgbox(1)">信息框1</a>
-    <a href="#" onclick="testMsgbox(2)">信息框2</a>
-    <a href="#" onclick="testMsgbox(3)">信息框3</a>
-    <a href="#" onclick="testMsgbox(4)">信息框4</a>
+    <a href="#" onclick="testMsgbox(1)">信息框1</a>&nbsp;&nbsp;
+    <a href="#" onclick="testMsgbox(2)">信息框2</a>&nbsp;&nbsp;
+    <a href="#" onclick="testMsgbox(3)">信息框3</a>&nbsp;&nbsp;
+    <a href="#" onclick="testMsgbox(4)">信息框4</a>&nbsp;&nbsp;
     <a href="#" onclick="testMsgbox(5)">信息框5</a>
+    <br>
+    <h1>页面层/iframe层</h1>
+    <div id="img" style="display:none">
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504798530155&di=f381e3a0ff76553ffdc37f98c9af599a&imgtype=jpg&src=http%3A%2F%2Fb.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Ffcfaaf51f3deb48f856b141ef91f3a292cf578eb.jpg"
+            style="width:504px;height:315px;">
+    </div>
+
+    <a href="# " onclick="testPages(1) ">页面层-自定义</a>&nbsp;&nbsp;
+    <a href="# " onclick="testPages(2) ">图片</a>&nbsp;&nbsp;
+    <a href="# " onclick="testPages(3) ">iframe层-父子操作</a>&nbsp;&nbsp;
+    <a href="# " onclick="testPages(4) ">iframe层-多媒体</a>&nbsp;&nbsp;
+    <a href="# " onclick="testPages(5) ">iframe层-禁滚动条</a>
+    <div id="divParent">父窗口DIV</div>
+
 </body>
 
 </html>

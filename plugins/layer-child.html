@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery-3.2.1.js"></script>
+    <script src="layer-3.0.3/layer.js"></script>
+    <script>
+        $(function () {
+            var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+            //给父页面传值
+            $('#btnChild').on('click', function () {
+                parent.$('#divParent').html('我被改变了');
+                parent.layer.tips('Look here', '#divParent', {
+                    time: 5000
+                });
+                parent.layer.close(index);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="btnChild">传值给父窗口</button>
+</body>
+
+</html>
