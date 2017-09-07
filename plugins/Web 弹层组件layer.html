@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery/jquery-3.2.1.js"></script>
+    <script src="layer-3.0.3/layer.js"></script>
+    <script>
+        //信息框
+        function testMsgbox(type) {
+            switch (type) {
+                case 1:
+                    layer.alert('见到你真的很高兴', {
+                        icon: 6
+                    });
+                    break;
+                case 2:
+                    layer.msg('hello');
+                    break;
+                case 3:
+                    layer.msg('继续？', {
+                        time: 0, //不自动关闭
+                        btn: ['A', 'B', 'C'],
+                        yes: function (index) {
+                            layer.close(index);
+                            layer.msg('最后一次', {
+                                icon: 6,
+                                btn: ['D', 'E', 'F']
+                            });
+                        },
+                        btn3: function (index) {
+                            layer.close(index);
+                            layer.msg('最后一次', {
+                                icon: 6,
+                                btn: ['G', 'H', 'I']
+                            });
+                        }
+                    });
+                    break;
+                case 4:
+                    layer.msg('不开心。。', {
+                        icon: 5
+                    });
+                    break;
+                case 5:
+                    layer.msg('玩命卖萌中', function () {
+                        //关闭后的操作
+                        layer.msg('after close');
+                    });
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>信息框</h1>
+    <a href="#" onclick="testMsgbox(1)">信息框1</a>
+    <a href="#" onclick="testMsgbox(2)">信息框2</a>
+    <a href="#" onclick="testMsgbox(3)">信息框3</a>
+    <a href="#" onclick="testMsgbox(4)">信息框4</a>
+    <a href="#" onclick="testMsgbox(5)">信息框5</a>
+</body>
+
+</html>
