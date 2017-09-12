@@ -24,28 +24,23 @@ namespace Algorithms.Sort.QuickSort
             //list.Add(2);
             //list.Add(6);
             //list.Add(10);
-            int count = 1000;
-            int testCount = 10;
+            int count = 10;
+            int testCount = 3;
             string before = string.Empty;
             string after = string.Empty;
+            string source = string.Empty;
             QuickSortClass quick = new QuickSortClass();
+            Console.WriteLine("产生测试数据中......");
             list = Seed(count);
-            //for (int i = 0; i < list.Count; i++)
-            //{
-            //    before += list[i].ToString() + "  ";
-            //}
-            //Console.WriteLine($"原始集合：{before}");
-
-            //quick.QuickSort(list, 0, list.Count - 1);
-            //int left=quick.Division(list, 0, list.Count - 1);
-            //for (int i = 0; i < list.Count; i++)
-            //{
-            //    after += list[i].ToString() + "  ";
-            //}
-            //Console.WriteLine(left);
-            //Console.WriteLine($"快速排序：{after}");
+            Console.WriteLine("测试数据生成完成......" + Environment.NewLine);
+            for (int i = 0; i < count; i++)
+            {
+                source += list[i] + " ";
+            }
+            Console.WriteLine($"原始数据： {source}");
 
 
+            #region 快速排序实例
             for (int i = 0; i < testCount; i++)
             {
                 Stopwatch watch = new Stopwatch();
@@ -59,16 +54,17 @@ namespace Algorithms.Sort.QuickSort
 
                 watch = new Stopwatch();
                 watch.Start();
-                quick.QuickSort(list, 0, list.Count-1);
+                quick.QuickSort2(list, 0, list.Count - 1);
                 watch.Stop();
                 Console.WriteLine($"第{i + 1}次，快速排序 {count}个数耗时：{watch.ElapsedMilliseconds}ms");
                 Console.WriteLine("输出前是十个数:" + string.Join(",", list.Take(10).ToList()));
 
-                
-                
+
+
 
                 Console.WriteLine("************************");
-            }
+            } 
+            #endregion
 
         }
         /// <summary>
@@ -121,11 +117,34 @@ namespace Algorithms.Sort.QuickSort
 
         public void QuickSort(List<int> list, int left, int right)
         {
-            if (left<right)
+            if (left < right)
             {
                 int i = Division(list, left, right);
                 QuickSort(list, left, i - 1);
                 QuickSort(list, i + 1, right);
+            }
+        }
+
+        public void QuickSort2(List<int> list, int left, int right)
+        {
+            if (left < right)
+            {
+                int L = left, R = right;
+                int baseNum = list[L];
+                while (L < R)
+                {
+                    while (L < R && list[R] >= baseNum)
+                        R--;
+                    list[L] = list[R];
+
+                    while (L < R && list[L] <= baseNum)
+                        L++;
+                    list[R] = list[L];
+                }
+                list[L] = baseNum;
+                QuickSort2(list, left, L - 1);
+                QuickSort2(list, L + 1, right);
+
             }
         }
     }
