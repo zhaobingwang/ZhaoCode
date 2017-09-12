@@ -133,7 +133,7 @@ namespace Algorithms.Sort.QuickSort
                 int baseNum = list[L];
                 while (L < R)
                 {
-                    while (L < R && list[R] >= baseNum)
+                    while (L < R && list[R] > baseNum)
                         R--;
                     list[L] = list[R];
 
