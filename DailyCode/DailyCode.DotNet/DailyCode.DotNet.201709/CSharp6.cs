@@ -15,7 +15,7 @@ namespace DailyCode.DotNet._201709
         /// <param name="param"></param>
         public void ThrowArgumentNullExceptionUsingNameOf(string param)
         {
-            if (param==null)
+            if (param == null)
                 throw new ArgumentNullException(nameof(param));
         }
     }
