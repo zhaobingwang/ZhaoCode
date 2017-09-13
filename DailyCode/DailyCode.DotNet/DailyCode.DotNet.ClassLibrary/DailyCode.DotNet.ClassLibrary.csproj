@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A1673107-C850-4F64-B849-5F4E6EB50FE9}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>DailyCode.DotNet._201709</RootNamespace>
-    <AssemblyName>DailyCode.DotNet.201709</AssemblyName>
+    <ProjectGuid>{C95EE2C5-3356-4E5C-B29B-3157C1A43599}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DailyCode.DotNet.ClassLibrary</RootNamespace>
+    <AssemblyName>DailyCode.DotNet.ClassLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,18 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CSharp6.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Modifiers\ConstSample.cs" />
+    <Compile Include="Modifiers\ReadonlySample.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DailyCode.DotNet.ClassLibrary\DailyCode.DotNet.ClassLibrary.csproj">
-      <Project>{c95ee2c5-3356-4e5c-b29b-3157c1a43599}</Project>
-      <Name>DailyCode.DotNet.ClassLibrary</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
