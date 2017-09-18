@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+  <description>An  example that demonstrates simple IoC features.</description>
+  <!--object的name可以自定义，property中的属性name不能自定义-->
+  <object name="DemoBase" type="SpringNetConsoleApp.Demo.DemoBase,SpringNetConsoleApp">
+    <property name="ReturnValue" value="Jack"></property>
+    <property name="Demo2" ref="Demo2"></property>
+  </object>
+  <object name="Demo2" type="SpringNetConsoleApp.Demo.Demo2,SpringNetConsoleApp">
+    <property name="Demo2Property" value="123"></property>
+  </object>
+</objects>
