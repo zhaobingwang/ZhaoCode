@@ -35,7 +35,7 @@ namespace OpenSourceTools.Polly
                     }, ReportError);
                 politicaWaitAndRetry.Execute(() =>
                 {
-                    //ZeroException();
+                    ZeroException();
                 });
             }
             catch (DivideByZeroException ex)
