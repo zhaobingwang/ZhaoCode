@@ -25,18 +25,29 @@ namespace OpenSourceTools.Polly
                 //    Compute();
                 //});
 
-                var politicaWaitAndRetry = Policy
-                    .Handle<DivideByZeroException>()
-                    .WaitAndRetry(new[] {
-                        TimeSpan.FromSeconds(1),
-                        TimeSpan.FromSeconds(3),
-                        TimeSpan.FromSeconds(5),
-                        TimeSpan.FromSeconds(7),
-                    }, ReportError);
-                politicaWaitAndRetry.Execute(() =>
+                //var politicaWaitAndRetry = Policy
+                //    .Handle<DivideByZeroException>()
+                //    .WaitAndRetry(new[] {
+                //        TimeSpan.FromSeconds(1),
+                //        TimeSpan.FromSeconds(3),
+                //        TimeSpan.FromSeconds(5),
+                //        TimeSpan.FromSeconds(7),
+                //    }, ReportError);
+                //politicaWaitAndRetry.Execute(() =>
+                //{
+                //    ZeroException();
+                //});
+
+                //反馈策略
+                var fallBackPolicy =
+                    Policy<string>
+                    .Handle<Exception>()
+                    .Fallback("执行失败，返回FallBack");
+                var fallBack = fallBackPolicy.Execute(() =>
                 {
-                    ZeroException();
+                    return ThrowException();
                 });
+                Console.WriteLine(fallBack);
             }
             catch (DivideByZeroException ex)
             {
@@ -53,9 +64,13 @@ namespace OpenSourceTools.Polly
         {
             throw new DivideByZeroException();
         }
-        static void ReportError(Exception e,TimeSpan ts,int intento,Context context)
+        static void ReportError(Exception e, TimeSpan ts, int intento, Context context)
         {
             Console.WriteLine($"异常{intento:00}[调用耗时：{ts.Seconds}秒] [执行时间：{DateTime.Now}]");
+        }
+        static string ThrowException()
+        {
+            throw new Exception();
         }
     }
 }
