@@ -36,10 +36,20 @@ namespace CSharp.Temp
             }
 
 
-            var testdata = "D121";
+            var testdata = "D1213";
             string result = string.Empty;
             dict.TryGetValue(testdata, out result);
-            Console.WriteLine(result);
+            //在工作中用到这个方法,做了个不严谨的操作,当执行完这段代码后,如果值不在字典中,最后out一个控制,没有进行非空校验就进行后续操作;
+            //update2017-10-11
+            if (!string.IsNullOrEmpty(result))
+            {
+                Console.WriteLine(result);
+            }
+            else
+            {
+                Console.WriteLine("测试数据不在字典中");
+            }
+
         }
     }
 }
