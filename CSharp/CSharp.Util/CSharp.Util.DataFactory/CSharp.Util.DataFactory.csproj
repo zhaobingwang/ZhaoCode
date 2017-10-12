@@ -52,7 +52,12 @@
     <Compile Include="Data\BindAccount.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\Province.cs" />
+    <Compile Include="Data\SeedingDataInitializer.cs" />
     <Compile Include="Data\User.cs" />
+    <Compile Include="Migrations\201710121253582_AddTestDataMigration.cs" />
+    <Compile Include="Migrations\201710121253582_AddTestDataMigration.Designer.cs">
+      <DependentUpon>201710121253582_AddTestDataMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +72,10 @@
       <Name>CSharp.Util.Open</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201710121253582_AddTestDataMigration.resx">
+      <DependentUpon>201710121253582_AddTestDataMigration.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

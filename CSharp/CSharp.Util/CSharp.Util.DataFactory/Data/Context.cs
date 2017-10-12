@@ -11,7 +11,7 @@ namespace CSharp.Util.DataFactory.Data
     {
         public Context() : base("name=DemoConn")
         {
-
+            //Database.SetInitializer<Context>(new SeedingDataInitializer());
         }
         public DbSet<User> User { get; set; }
         public DbSet<Province> Province { get; set; }

@@ -11,9 +11,16 @@ namespace CSharp.Util.DataFactory
     {
         static void Main(string[] args)
         {
-            var context = new Context();
-            context.Database.CreateIfNotExists();
-            Console.WriteLine("success");
+            using (var db = new Context())
+            {
+                var province = db.Province;
+                foreach (var p in province)
+                {
+                    Console.WriteLine($"Id: {p.Id} \t Name{p.Name}");
+                }
+            }
+            Console.WriteLine("数据播种完成");
+            Console.ReadLine();
         }
     }
 }
