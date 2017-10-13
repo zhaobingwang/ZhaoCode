@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DailyCode.Serial.JQuery</title>
+</head>
+
+<body>
+    <div>
+        <input type="radio" value="0" name="state" id="radio_1">
+        <label for="radio_1">正常</label>
+        <input type="radio" value="1" name="state" checked id="radio_2">
+        <label for="radio_1">待审核</label>
+        <input type="radio" value="2" name="state" id="radio_3">
+        <label for="radio_1">已作废</label>
+        <button id="btn_get_radio">获取选中的radio的值</button>
+    </div>
+</body>
+
+</html>
+<script src="jquery-3.2.1.js"></script>
+<script>
+    $(function () {
+        $('#btn_get_radio').click(function () {
+            var rsult = $('input[name="state"]:checked').val();
+            alert(result);
+        });
+    });
+</script>
