@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace SpringNet.Service
 {
-    public class Class1
+    public class TestClass
     {
+        public string TestGet()
+        {
+            return "this is test content";
+        }
     }
 }

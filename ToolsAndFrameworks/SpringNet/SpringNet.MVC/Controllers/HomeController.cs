@@ -8,6 +8,14 @@ namespace SpringNet.MVC.Controllers
 {
     public class HomeController : Controller
     {
+        //Service.TestClass test = new Service.TestClass();
+        Service.TestClass test { get; set; }
+        public ActionResult Test()
+        {
+            string result = test.TestGet();
+            return Content(result);
+        }
+
         public ActionResult Index()
         {
             return View();
