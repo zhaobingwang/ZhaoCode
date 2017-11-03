@@ -21,10 +21,52 @@ namespace AsynchronousProgramming
 
             //Task.Delay(10000).Wait();
             //Console.WriteLine("END"); 
+
+            #region 错误处理
+            //DontHandle();
+            HandleOneError();
+            Task.Delay(5000).Wait();
+            Console.WriteLine("END");
+            #endregion
+
             #endregion
 
         }
         #region 异步编程基础
+
+
+
+        #region 15.4 错误处理
+        static async Task ThrowAfter(int ms, string message)
+        {
+            await Task.Delay(ms);
+            throw new Exception(message);
+        }
+        static void DontHandle()
+        {
+            try
+            {
+                ThrowAfter(200, "first");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        private static async void HandleOneError()
+        {
+            try
+            {
+                await ThrowAfter(3000, "first");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"handled {ex.Message}");
+            }
+        }
+        #endregion
+
+        #region 15.3.5 使用多个异步方法
         private async static void MultipleAsyncMethodsWithCombinators2()
         {
             Stopwatch sw = new Stopwatch();
@@ -53,7 +95,10 @@ namespace AsynchronousProgramming
             string s2 = await GreetingAsync("Mike");
             sw.Stop();
             Console.WriteLine($"s1:{s1} \n s2:{s2} 耗时：{sw.ElapsedMilliseconds} ms");
-        }
+        } 
+        #endregion
+
+        #region 15.3.3 延续任务
         private static void CallerWithContinuationTask()
         {
             Task<string> t1 = GreetingAsync("Mike");
@@ -62,13 +107,18 @@ namespace AsynchronousProgramming
                 string result = t.Result;
                 Console.WriteLine(result + "任务完成");
             });
-        }
+        } 
+        #endregion
 
+        #region 15.3.2 调用异步方法
         private async static void CallerWithAsync()
         {
             string result = await GreetingAsync("Jack");
             Console.WriteLine(result);
-        }
+        } 
+        #endregion
+
+        #region 15.3.1 创建任务
         static Task<string> GreetingAsync(string name)
         {
             return Task.Run<string>(() =>
@@ -80,7 +130,8 @@ namespace AsynchronousProgramming
         {
             Task.Delay(3000).Wait();
             return $"Hello,{name}";
-        }
+        } 
+        #endregion
 
         #endregion
     }
