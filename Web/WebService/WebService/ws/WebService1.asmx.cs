@@ -22,5 +22,10 @@ namespace WebService.ws
         {
             return "Hello World";
         }
+
+        public string test()
+        {
+            return "TEST";
+        }
     }
 }
