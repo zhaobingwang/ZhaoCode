@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            border:1px solid red ;
+            width:50px;
+            font-size: 22px;
+        }
+    </style>
+</head>
+<body>
+    <table style="width:100px;">
+        <tr>
+            <td class="box">AAAA</td>
+            <td class="box">AAAABBBB</td>
+            <td class="box">AAAABBBBCCCCdddddeeeeeffffffgggggggggggghhhhhhhhhhhhhhhhiiiiiiiiiiii</td>
+        </tr>
+    </table>
+</body>
+
+</html>
+<script src="jquery-3.2.1.js"></script>
+<script type="text/javascript">
+    $(function(){
+
+        $('.box').each(function(){
+            if($(this).text()>8){
+                $(this).attr('style','font-size:64px');
+            }
+        });
+        function minsize(){
+            
+            var $box=$(".box");
+            var $content=$(".content");
+            if($content.height() >= $box.height()){
+                $content.css('font-size',parseInt($content.css('font-size'))-1 +'px');
+                arguments.callee();  //callee表示对函数对象本身的引用，这有利于实现无名函数的递归或者保证函数的封装性
+            }
+        }
+        //minsize();
+    })
+    </script>
