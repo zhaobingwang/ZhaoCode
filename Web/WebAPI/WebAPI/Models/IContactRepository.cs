@@ -9,7 +9,7 @@ namespace WebAPI.Models
 {
     public interface IContactRepository
     {
-        IEnumerable GeyAllContacts();
+        IList<Contact> GetAllContacts();
         Contact GetContact(string id);
         Contact AddContact(Contact contact);
         bool RemoveContact(string id);
