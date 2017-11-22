@@ -42,5 +42,11 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebApiSite.Domain\WebApiSite.Domain.csproj">
+      <Project>{7df9d4c3-da64-4227-b892-e9cae3c7ad44}</Project>
+      <Name>WebApiSite.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
