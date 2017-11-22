@@ -11,7 +11,7 @@ namespace WebApiSite.Domain
     {
         public Context() : base("name=WepApiConn")
         {
-
+            //Database.SetInitializer<Context>(new SeedingDataInitializer());
         }
         public DbSet<User> User { get; set; }
     }

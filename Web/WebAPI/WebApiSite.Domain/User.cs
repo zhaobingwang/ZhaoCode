@@ -32,7 +32,7 @@ namespace WebApiSite.Domain
         /// <summary>
         /// 年龄
         /// </summary>
-        public short Age { get; set; }
+        public int Age { get; set; }
 
         /// <summary>
         /// 生日
