@@ -41,20 +41,37 @@ namespace NetCoreWebAPI
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult PostBookChapter([FromBody]BookChapter chapter)
         {
+            if (chapter==null)
+            {
+                return BadRequest();
+            }
+            _repository.Add(chapter);
+            return CreatedAtRoute(nameof(GetBookChapterById), new { id = chapter.Id });
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public IActionResult PutBookChapter(Guid id, [FromBody]BookChapter chapter)
         {
+            if (chapter==null||id!=chapter.Id)
+            {
+                return BadRequest();
+            }
+            if (_repository.Find(id)==null)
+            {
+                return NotFound();
+            }
+            _repository.Update(chapter);
+            return new NoContentResult();
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete(Guid id)
         {
+            _repository.Remove(id);
         }
     }
 }
