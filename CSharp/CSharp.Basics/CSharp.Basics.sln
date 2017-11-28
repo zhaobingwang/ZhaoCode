@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectsAndTypes", "ObjectsAndTypes\ObjectsAndTypes.csproj", "{80308264-1638-44B8-B43F-C4CD797F66F6}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsynchronousProgramming", "AsynchronousProgramming\AsynchronousProgramming.csproj", "{490A785B-5227-4BB2-901F-11460A430630}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.XML", "CSharp.XML\CSharp.XML.csproj", "{960334BB-C2A0-4B43-A6B8-E2563A5091BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp.Basics.Multithreading", "CSharp.Basics.Multithreading\CSharp.Basics.Multithreading.csproj", "{BCFAEE20-FF3A-4454-A0EC-64B0A4D19F19}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "杂七杂八", "杂七杂八", "{44B44C7C-21A9-45A0-ACC3-5B66FD831165}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +37,16 @@ Global
 		{960334BB-C2A0-4B43-A6B8-E2563A5091BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{960334BB-C2A0-4B43-A6B8-E2563A5091BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{960334BB-C2A0-4B43-A6B8-E2563A5091BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCFAEE20-FF3A-4454-A0EC-64B0A4D19F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCFAEE20-FF3A-4454-A0EC-64B0A4D19F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCFAEE20-FF3A-4454-A0EC-64B0A4D19F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCFAEE20-FF3A-4454-A0EC-64B0A4D19F19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BCFAEE20-FF3A-4454-A0EC-64B0A4D19F19} = {44B44C7C-21A9-45A0-ACC3-5B66FD831165}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2EB8BE97-AA99-4ED3-8FD0-9D0B3F078E4E}
