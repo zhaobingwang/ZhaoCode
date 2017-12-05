@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Polly, Version=5.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Polly.5.3.1\lib\net45\Polly.dll</HintPath>
+      <HintPath>D:\Packages\Polly.5.3.1\lib\net45\Polly.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
