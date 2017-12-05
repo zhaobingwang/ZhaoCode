@@ -51,6 +51,7 @@
     <Compile Include="UnclassifiedUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DeepCopyTest.cs" />
+    <Compile Include="DictionaryExtensionUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
