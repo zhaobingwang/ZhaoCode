@@ -63,7 +63,7 @@ namespace CSharp.Temp
         {
             foreach (var item in values)
             {
-                if (!dict.ContainsKey(item.Key)  || replaceExisted)
+                if (!dict.ContainsKey(item.Key) || replaceExisted)
                     dict[item.Key] = item.Value;
             }
             return dict;
