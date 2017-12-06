@@ -38,5 +38,33 @@ namespace CSharp.Util.Open
             dict[key] = value;
             return dict;
         }
+
+        /// <summary>
+        /// 获取字典值，如果没有则返回输入的默认值(如果不设默认值则为null)
+        /// </summary>
+        /// <typeparam name="TKey"></typeparam>
+        /// <typeparam name="TValue"></typeparam>
+        /// <param name="dict"></param>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static TValue GetValue<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key, TValue value = default(TValue))
+        {
+            return dict.ContainsKey(key) ? dict[key] : value;
+        }
+
+        /// <summary>
+        /// 向字典中批量添加键值对
+        /// </summary>
+        /// <param name="replaceExisted">如果已存在，是否替换</param>
+        public static Dictionary<TKey, TValue> AddRange<TKey, TValue>(this Dictionary<TKey, TValue> dict, IEnumerable<KeyValuePair<TKey, TValue>> values, bool replaceExisted)
+        {
+            foreach (var item in values)
+            {
+                if (!dict.ContainsKey(item.Key) || replaceExisted)
+                    dict[item.Key] = item.Value;
+            }
+            return dict;
+        }
     }
 }

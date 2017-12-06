@@ -16,19 +16,25 @@ namespace CSharp.Temp
         static void Main(string[] args)
         {
             Dictionary<string, string> dict = new Dictionary<string, string>();
-            if (!dict.ContainsKey("Id"))
-                dict.Add("Id", "10001");
             dict.Add("Name", "李四");
-            if (!dict.ContainsKey("Name"))
-                dict.Add("Name", "张三");
-            else
-                dict["Name"] = "张三";
-            dict.AddOrReplace("Name", "李四");
+            string v = "defaultValue";
 
 
+            //if (dict.ContainsKey("Name"))
+            //{
+            //    v = dict["Name"];
+            //}
+
+            //dict.TryGetValue("Name1", out v);
+
+            string resullt = dict.GetValue("Nam1e");
+
+            var dict1 = new Dictionary<string, string>().AddOrReplace("name1", "zhansgasn");
+            var dict2 = new Dictionary<string, string>().AddOrReplace("name2", "lisi");
+            dict.AddRange(dict1, false).AddRange(dict2, true);
             foreach (var item in dict)
             {
-                Console.WriteLine($"{item.Key}:{item.Value}");
+                Console.WriteLine(item.Value);
             }
         }
     }
@@ -45,6 +51,21 @@ namespace CSharp.Temp
         public static Dictionary<TKey, TValue> AddOrReplace<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key, TValue value)
         {
             dict[key] = value;
+            return dict;
+        }
+
+        public static TValue GetValue<TKey, TValue>(this Dictionary<TKey, TValue> dict, TKey key, TValue value = default(TValue))
+        {
+            return dict.ContainsKey(key) ? dict[key] : value;
+        }
+
+        public static Dictionary<TKey, TValue> AddRange<TKey, TValue>(this Dictionary<TKey, TValue> dict, IEnumerable<KeyValuePair<TKey, TValue>> values, bool replaceExisted)
+        {
+            foreach (var item in values)
+            {
+                if (!dict.ContainsKey(item.Key)  || replaceExisted)
+                    dict[item.Key] = item.Value;
+            }
             return dict;
         }
     }
