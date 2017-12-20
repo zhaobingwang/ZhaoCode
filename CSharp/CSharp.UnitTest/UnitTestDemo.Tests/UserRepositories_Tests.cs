@@ -8,7 +8,7 @@ using Xunit;
 
 namespace UnitTestDemo.Tests
 {
-    public class UserRepositories_Tests
+    public class UserRepositories_Tests : IDisposable
     {
         [Fact]
         public void Add_Ok()
@@ -22,6 +22,19 @@ namespace UnitTestDemo.Tests
             r.Add(user);
             var model = r.Users.Where(u => u.Name == "张三").FirstOrDefault();
             Assert.True(model != null);
+        }
+
+        /// <summary>
+        /// 实现IDisposable接口，清理本测试产生的垃圾数据
+        /// </summary>
+        public void Dispose()
+        {
+            UserRepositories r = new UserRepositories();
+            var models = r.Users.ToList();
+            foreach (var item in models)
+            {
+                r.Delete(item.Id);
+            }
         }
     }
 }

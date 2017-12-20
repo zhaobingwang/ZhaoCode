@@ -27,6 +27,14 @@ namespace UnitTestDemo
             }
         }
 
+        public void Delete(Guid id)
+        {
+            var model = Users.Where(u => u.Id == id).Single();
+            db.Set<User>().Attach(model);
+            db.Set<User>().Remove(model);
+            db.SaveChanges();
+        }
+
         public IQueryable<User> Users
         {
             get
