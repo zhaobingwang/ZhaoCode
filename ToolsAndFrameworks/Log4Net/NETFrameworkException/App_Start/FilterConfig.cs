@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using NETFrameworkException.Models;
+using System.Web;
 using System.Web.Mvc;
 
 namespace NETFrameworkException
@@ -7,7 +8,8 @@ namespace NETFrameworkException
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            //filters.Add(new HandleErrorAttribute());
+            filters.Add(new MyExceptionAttribute());
         }
     }
 }

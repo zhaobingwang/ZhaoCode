@@ -11,7 +11,8 @@ namespace NETFrameworkException.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-
+            int a = 0;
+            int b = 10 / a;
             return View();
         }
     }
