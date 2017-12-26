@@ -1,4 +1,5 @@
-﻿using NETFrameworkException.Models;
+﻿using log4net;
+using NETFrameworkException.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,6 +17,7 @@ namespace NETFrameworkException
     {
         protected void Application_Start()
         {
+            log4net.Config.XmlConfigurator.Configure(); //读取log4net配置信息
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
@@ -34,8 +36,10 @@ namespace NETFrameworkException
                         if (ex!=null)
                         {
                             //将异常信息写入日志
-                            string fileName = DateTime.Now.ToString("yyyyMMdd");
-                            File.AppendAllText(filePath + fileName + ".log", ex.ToString(), System.Text.Encoding.UTF8);
+                            //string fileName = DateTime.Now.ToString("yyyyMMdd");
+                            //File.AppendAllText(filePath + fileName + ".log", ex.ToString(), System.Text.Encoding.UTF8);
+                            ILog logger = LogManager.GetLogger("errorMsg");
+                            logger.Error(ex.ToString());
                         }
                     }
                     else
