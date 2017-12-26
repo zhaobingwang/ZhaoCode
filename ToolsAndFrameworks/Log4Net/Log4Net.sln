@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Log4NetConsoleApp", "Log4NetConsoleApp\Log4NetConsoleApp.csproj", "{63950B91-9CDF-4F57-96BE-330A8C699DD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NETFrameworkException", "NETFrameworkException\NETFrameworkException.csproj", "{A5FAA446-10AC-45E1-8306-8ADB1F8D6914}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63950B91-9CDF-4F57-96BE-330A8C699DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63950B91-9CDF-4F57-96BE-330A8C699DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63950B91-9CDF-4F57-96BE-330A8C699DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63950B91-9CDF-4F57-96BE-330A8C699DD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5FAA446-10AC-45E1-8306-8ADB1F8D6914}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5FAA446-10AC-45E1-8306-8ADB1F8D6914}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5FAA446-10AC-45E1-8306-8ADB1F8D6914}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5FAA446-10AC-45E1-8306-8ADB1F8D6914}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {541C213F-70D8-4174-91BD-A427CD41E4B0}
+	EndGlobalSection
+EndGlobal
