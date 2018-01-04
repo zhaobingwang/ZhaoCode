@@ -18,7 +18,10 @@
     </div>*@
 
 @using Microsoft.Extensions.Options;
-@inject IOptions<OptionBindSample.Class> ClassAccesser
+@*@inject IOptions<OptionBindSample.Class> ClassAccesser*@
+
+@*配置热更新*@
+@inject IOptionsSnapshot<OptionBindSample.Class> ClassAccesser
 
 @{
     ViewData["Title"] = "Index";

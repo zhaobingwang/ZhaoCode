@@ -16,9 +16,13 @@ namespace OptionBindSample
         {
             BuildWebHost(args).Run();
         }
-
+        //CreateDefaultBuilder:https://github.com/aspnet/MetaPackages/blob/dev/src/Microsoft.AspNetCore/WebHost.cs
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration(config =>
+                {
+                    config.AddJsonFile("appsettings.json", false, false);   //取消热更新
+                })
                 .UseStartup<Startup>()
                 .Build();
     }
