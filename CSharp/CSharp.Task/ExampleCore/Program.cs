@@ -63,61 +63,86 @@ namespace ExampleCore
             //    Console.WriteLine($"    Task #{t.Id}:{t.Status}");
             #endregion
 
-            var source1 = new CancellationTokenSource();
-            var token1 = source1.Token;
-            source1.Cancel();
-            var source2 = new CancellationTokenSource();
-            var token2 = source2.Token;
+            #region 任务取消CancellationTokenSource
+            //var source1 = new CancellationTokenSource();
+            //var token1 = source1.Token;
+            //source1.Cancel();
+            //var source2 = new CancellationTokenSource();
+            //var token2 = source2.Token;
 
-            Task[] tasks = new Task[12];
-            for (int i = 0; i < 12; i++)
-            {
-                switch (i % 4)
-                {
-                    case 0:
-                        tasks[i] = Task.Run(() => Thread.Sleep(2000));
-                        break;
-                    case 1:
-                        tasks[i] = Task.Run(() => Thread.Sleep(2000), token1);
-                        break;
-                    case 2:
-                        tasks[i] = Task.Run(() => { throw new NotSupportedException(); });
-                        break;
-                    case 3:
-                        tasks[i] = Task.Run(() =>
-                        {
-                            Thread.Sleep(2000);
-                            if (token2.IsCancellationRequested)
-                                token2.ThrowIfCancellationRequested();
-                            Thread.Sleep(500);
-                        }, token2);
-                        break;
-                }
-            }
+            //Task[] tasks = new Task[12];
+            //for (int i = 0; i < 12; i++)
+            //{
+            //    switch (i % 4)
+            //    {
+            //        case 0:
+            //            tasks[i] = Task.Run(() => Thread.Sleep(2000));
+            //            break;
+            //        case 1:
+            //            tasks[i] = Task.Run(() => Thread.Sleep(2000), token1);
+            //            break;
+            //        case 2:
+            //            tasks[i] = Task.Run(() => { throw new NotSupportedException(); });
+            //            break;
+            //        case 3:
+            //            tasks[i] = Task.Run(() =>
+            //            {
+            //                Thread.Sleep(2000);
+            //                if (token2.IsCancellationRequested)
+            //                    token2.ThrowIfCancellationRequested();
+            //                Thread.Sleep(500);
+            //            }, token2);
+            //            break;
+            //    }
+            //}
 
-            Thread.Sleep(250);
-            source2.Cancel();
-            try
-            {
-                Task.WaitAll(tasks);
-            }
-            catch (AggregateException ae)
-            {
-                Console.WriteLine("One or more exceptions occurred");
-                foreach (var ex in ae.InnerExceptions)
-                    Console.WriteLine($"    {ex.GetType().Name}:{ex.Message}");
-            }
+            //Thread.Sleep(250);
+            //source2.Cancel();
+            //try
+            //{
+            //    Task.WaitAll(tasks);
+            //}
+            //catch (AggregateException ae)
+            //{
+            //    Console.WriteLine("One or more exceptions occurred");
+            //    foreach (var ex in ae.InnerExceptions)
+            //        Console.WriteLine($"    {ex.GetType().Name}:{ex.Message}");
+            //}
 
-            Console.WriteLine("\nStatus of tasks:");
-            foreach (var t in tasks)
+            //Console.WriteLine("\nStatus of tasks:");
+            //foreach (var t in tasks)
+            //{
+            //    Console.WriteLine($"    Task #{t.Id}:{t.Status}");
+            //    if (t.Exception!=null)
+            //    {
+            //        foreach (var ex in t.Exception.InnerExceptions)
+            //            Console.WriteLine($"        {ex.GetType().Name}:{ex.Message}");
+            //    }
+            //} 
+            #endregion
+
+            #region 示例
+            Action<object> action = (object obj) =>
             {
-                Console.WriteLine($"    Task #{t.Id}:{t.Status}");
-                if (t.Exception!=null)
-                {
-                    foreach (var ex in t.Exception.InnerExceptions)
-                        Console.WriteLine($"        {ex.GetType().Name}:{ex.Message}");
-                }
-            }
+                Console.WriteLine($"Task={Task.CurrentId},obj={obj},Thread={Thread.CurrentThread.ManagedThreadId}");
+            };
+            Task t1 = new Task(action, "alpha");
+            Task t2 = Task.Factory.StartNew(action, "beta");
+            t2.Wait();
+            t1.Start();
+            Console.WriteLine($"t1 has been launched.(Main Thread={Thread.CurrentThread.ManagedThreadId})");
+            t1.Wait();
+
+            string taskData = "gamma";
+            Task t3 = Task.Run(() =>
+            {
+                Console.WriteLine($"Task={Task.CurrentId},obj={taskData},Thread={Thread.CurrentThread.ManagedThreadId}");
+            });
+            t3.Wait();
+            Task t4 = new Task(action, "delta");
+            t4.RunSynchronously();
+            t4.Wait();
+            #endregion
         }
     }
 }
