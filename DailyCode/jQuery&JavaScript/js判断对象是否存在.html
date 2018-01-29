@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="check()">CHECK</button>
+</body>
+</html>
+<script>
+    function check(){
+        //更多见：http://www.ruanyifeng.com/blog/2011/05/how_to_judge_the_existence_of_a_global_object_in_javascript.html
+        if(typeof myObj=='undefined'){
+            alert('变量不存在');
+        }else{
+            //alert('')
+        }
+    }
+</script>
