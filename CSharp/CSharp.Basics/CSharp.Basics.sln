@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ObjectsAndTypes", "ObjectsAndTypes\ObjectsAndTypes.csproj", "{80308264-1638-44B8-B43F-C4CD797F66F6}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{AA1501EA-51FB-4FA6-97E4-CE2A80B685AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{31278E5E-F435-41B0-BE16-D9A3C73E7B86}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csharp.Dalegates", "Csharp.Dalegates\Csharp.Dalegates.csproj", "{5BA6B1F4-42D9-4D15-BAB2-4D40D2220E91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{31278E5E-F435-41B0-BE16-D9A3C73E7B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31278E5E-F435-41B0-BE16-D9A3C73E7B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31278E5E-F435-41B0-BE16-D9A3C73E7B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BA6B1F4-42D9-4D15-BAB2-4D40D2220E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BA6B1F4-42D9-4D15-BAB2-4D40D2220E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BA6B1F4-42D9-4D15-BAB2-4D40D2220E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BA6B1F4-42D9-4D15-BAB2-4D40D2220E91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
