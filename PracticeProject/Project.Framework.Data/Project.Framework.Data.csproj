@@ -57,9 +57,14 @@
     <Compile Include="Migrations\201803061224505_InitialDatabase.Designer.cs">
       <DependentUpon>201803061224505_InitialDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803061323315_AddTable_temp_table.cs" />
+    <Compile Include="Migrations\201803061323315_AddTable_temp_table.Designer.cs">
+      <DependentUpon>201803061323315_AddTable_temp_table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MySqlContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TempClass.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803061224505_InitialDatabase.resx">
       <DependentUpon>201803061224505_InitialDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803061323315_AddTable_temp_table.resx">
+      <DependentUpon>201803061323315_AddTable_temp_table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

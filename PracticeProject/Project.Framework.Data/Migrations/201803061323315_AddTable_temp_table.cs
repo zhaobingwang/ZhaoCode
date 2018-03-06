@@ -3,16 +3,16 @@ namespace Project.Framework.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialDatabase : DbMigration
+    public partial class AddTable_temp_table : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.users",
+                "dbo.temp_table",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(unicode: false),
+                        Id = c.Guid(nullable: false),
+                        MyProperty = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
@@ -20,7 +20,7 @@ namespace Project.Framework.Data.Migrations
         
         public override void Down()
         {
-            DropTable("dbo.users");
+            DropTable("dbo.temp_table");
         }
     }
 }
