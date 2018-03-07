@@ -53,13 +53,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201803061224505_InitialDatabase.cs" />
-    <Compile Include="Migrations\201803061224505_InitialDatabase.Designer.cs">
-      <DependentUpon>201803061224505_InitialDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201803070608590_InitialDatabase.cs" />
+    <Compile Include="Migrations\201803070608590_InitialDatabase.Designer.cs">
+      <DependentUpon>201803070608590_InitialDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803061323315_AddTable_temp_table.cs" />
-    <Compile Include="Migrations\201803061323315_AddTable_temp_table.Designer.cs">
-      <DependentUpon>201803061323315_AddTable_temp_table.cs</DependentUpon>
+    <Compile Include="Migrations\201803070610488_AddTable-users.cs" />
+    <Compile Include="Migrations\201803070610488_AddTable-users.Designer.cs">
+      <DependentUpon>201803070610488_AddTable-users.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MySqlContext.cs" />
@@ -72,11 +72,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803061224505_InitialDatabase.resx">
-      <DependentUpon>201803061224505_InitialDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803070608590_InitialDatabase.resx">
+      <DependentUpon>201803070608590_InitialDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803061323315_AddTable_temp_table.resx">
-      <DependentUpon>201803061323315_AddTable_temp_table.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803070610488_AddTable-users.resx">
+      <DependentUpon>201803070610488_AddTable-users.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

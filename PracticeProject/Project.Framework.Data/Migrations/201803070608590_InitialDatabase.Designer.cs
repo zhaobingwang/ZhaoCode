@@ -7,13 +7,13 @@ namespace Project.Framework.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddTable_temp_table : IMigrationMetadata
+    public sealed partial class InitialDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddTable_temp_table));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803061323315_AddTable_temp_table"; }
+            get { return "201803070608590_InitialDatabase"; }
         }
         
         string IMigrationMetadata.Source

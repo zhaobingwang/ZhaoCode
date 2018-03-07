@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project.Framework.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,14 @@ namespace Project.Framework.ConsoleApp
     {
         static void Main(string[] args)
         {
+            using (var db = new MySqlContext())
+            {
+                var users = db.Users;
+                foreach (var item in users)
+                {
+                    Console.WriteLine(item.Name);
+                }
+            }
         }
     }
 }

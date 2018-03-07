@@ -16,6 +16,5 @@ namespace Project.Framework.Data
 
         }
         public DbSet<User> Users { get; set; }
-        public DbSet<TempClass> TempClass { get; set; }
     }
 }
