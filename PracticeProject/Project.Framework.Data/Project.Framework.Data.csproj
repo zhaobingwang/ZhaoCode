@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChineseName.cs" />
     <Compile Include="Migrations\201803070608590_InitialDatabase.cs" />
     <Compile Include="Migrations\201803070608590_InitialDatabase.Designer.cs">
       <DependentUpon>201803070608590_InitialDatabase.cs</DependentUpon>
