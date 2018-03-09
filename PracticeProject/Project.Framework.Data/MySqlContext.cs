@@ -15,6 +15,14 @@ namespace Project.Framework.Data
         {
 
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            //users相关配置
+            modelBuilder.Entity<User>().Property(u => u.CreateDate).IsOptional();
+            modelBuilder.Entity<User>().Property(u => u.ModifyDate).IsOptional();
+
+            base.OnModelCreating(modelBuilder);
+        }
         public DbSet<User> Users { get; set; }
     }
 }

@@ -62,6 +62,10 @@
     <Compile Include="Migrations\201803070610488_AddTable-users.Designer.cs">
       <DependentUpon>201803070610488_AddTable-users.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803091614517_AddColumnForUsers.cs" />
+    <Compile Include="Migrations\201803091614517_AddColumnForUsers.Designer.cs">
+      <DependentUpon>201803091614517_AddColumnForUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MySqlContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803070610488_AddTable-users.resx">
       <DependentUpon>201803070610488_AddTable-users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803091614517_AddColumnForUsers.resx">
+      <DependentUpon>201803091614517_AddColumnForUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
