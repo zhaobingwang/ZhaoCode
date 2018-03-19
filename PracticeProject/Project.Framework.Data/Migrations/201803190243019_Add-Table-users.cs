@@ -13,6 +13,8 @@ namespace Project.Framework.Data.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(unicode: false),
+                        CreateDate = c.DateTime(precision: 0),
+                        ModifyDate = c.DateTime(precision: 0),
                     })
                 .PrimaryKey(t => t.Id);
             

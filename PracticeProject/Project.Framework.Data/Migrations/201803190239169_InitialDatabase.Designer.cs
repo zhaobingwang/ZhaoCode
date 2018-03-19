@@ -7,13 +7,13 @@ namespace Project.Framework.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddTableusers : IMigrationMetadata
+    public sealed partial class InitialDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddTableusers));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803070610488_AddTable-users"; }
+            get { return "201803190239169_InitialDatabase"; }
         }
         
         string IMigrationMetadata.Source

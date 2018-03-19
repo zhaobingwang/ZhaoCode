@@ -54,17 +54,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChineseName.cs" />
-    <Compile Include="Migrations\201803070608590_InitialDatabase.cs" />
-    <Compile Include="Migrations\201803070608590_InitialDatabase.Designer.cs">
-      <DependentUpon>201803070608590_InitialDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201803190239169_InitialDatabase.cs" />
+    <Compile Include="Migrations\201803190239169_InitialDatabase.Designer.cs">
+      <DependentUpon>201803190239169_InitialDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803070610488_AddTable-users.cs" />
-    <Compile Include="Migrations\201803070610488_AddTable-users.Designer.cs">
-      <DependentUpon>201803070610488_AddTable-users.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201803091614517_AddColumnForUsers.cs" />
-    <Compile Include="Migrations\201803091614517_AddColumnForUsers.Designer.cs">
-      <DependentUpon>201803091614517_AddColumnForUsers.cs</DependentUpon>
+    <Compile Include="Migrations\201803190243019_Add-Table-users.cs" />
+    <Compile Include="Migrations\201803190243019_Add-Table-users.Designer.cs">
+      <DependentUpon>201803190243019_Add-Table-users.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MySqlContext.cs" />
@@ -77,14 +73,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803070608590_InitialDatabase.resx">
-      <DependentUpon>201803070608590_InitialDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803190239169_InitialDatabase.resx">
+      <DependentUpon>201803190239169_InitialDatabase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803070610488_AddTable-users.resx">
-      <DependentUpon>201803070610488_AddTable-users.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201803091614517_AddColumnForUsers.resx">
-      <DependentUpon>201803091614517_AddColumnForUsers.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803190243019_Add-Table-users.resx">
+      <DependentUpon>201803190243019_Add-Table-users.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
