@@ -18,6 +18,10 @@ namespace Project.WebAPI
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            var format = GlobalConfiguration.Configuration.Formatters;
+            //清除默认返回xml格式结果
+            format.XmlFormatter.SupportedMediaTypes.Clear();
         }
     }
 }

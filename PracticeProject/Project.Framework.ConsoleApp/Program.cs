@@ -25,7 +25,11 @@ namespace Project.Framework.ConsoleApp
             //}
             //sw.Stop();
             //Console.WriteLine($"结束,耗时：{sw.Elapsed}");
-
+            using (var db = new MySqlContext())
+            {
+                var result = db.Users.Find(1);
+                Console.WriteLine(result.Name);
+            }
         }
 
         //static async Task ProduceData(int count1, int count2, string taskId)
