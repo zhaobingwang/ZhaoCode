@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace Project.Framework.Data
 {
     [Table("users")]
+    [Serializable]
     public class User
     {
         /// <summary>

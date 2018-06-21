@@ -9,4 +9,11 @@ namespace Project.WebAPI.Models.Response
     {
         public string Name { get; set; }
     }
+
+    public class UserStatisticsResponse
+    {
+        public string  Name { get; set; }
+        public string CreateDate { get; set; }
+        public string ModifyDate { get; set; }
+    }
 }
