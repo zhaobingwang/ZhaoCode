@@ -56,7 +56,7 @@ namespace Project.WebAPI.Controllers
             {
                 users = db.Users.OrderBy(u => u.Id).Skip(pageSize * (pageIndex - 1)).Take(pageSize).ToList();
                 var jsonUsers = JsonConvert.SerializeObject(users);
-                await redis.StringSetAsync(key_statistics, jsonUsers);
+                await redis.StringSetAsync(key_statistics, jsonUsers, TimeSpan.FromHours(1));
             }
             else
             {
