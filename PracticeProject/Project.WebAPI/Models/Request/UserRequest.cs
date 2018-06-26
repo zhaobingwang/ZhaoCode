@@ -11,4 +11,11 @@ namespace Project.WebAPI.Models.Request
         [MaxLength(12)]
         public string Name { get; set; }
     }
+
+    public class UserUpdateRequest
+    {
+        public int Id { get; set; }
+        [MaxLength(12)]
+        public string Name { get; set; }
+    }
 }

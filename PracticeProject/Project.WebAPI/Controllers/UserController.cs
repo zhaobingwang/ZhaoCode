@@ -92,6 +92,44 @@ namespace Project.WebAPI.Controllers
             }
         }
 
+        [HttpPost]
+        public async Task<IHttpActionResult> Update(dynamic obj)
+        {
+            int id = Convert.ToInt32(obj.id);
+            UserRequest beUpdateModel = JsonConvert.DeserializeObject<UserRequest>(Convert.ToString(obj.model));
+            var user = await db.Users.FindAsync(id);
+            if (ModelState.IsValid)
+            {
+                var aa = 1;
+            }
+            return Ok(true);
+        }
+
+        [HttpPost]
+        public async Task<IHttpActionResult> Update2(UserUpdateRequest request)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await db.Users.FindAsync(request.Id);
+                user.ModifyDate = DateTime.Now;
+                user.Name = request.Name;
+                db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+                try
+                {
+                    int result= await db.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    return NotFound();
+                }
+                return Ok(request);
+            }
+            else
+            {
+                return BadRequest(ModelState);
+            }
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
