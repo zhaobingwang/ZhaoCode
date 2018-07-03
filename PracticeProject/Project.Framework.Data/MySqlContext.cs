@@ -1,4 +1,5 @@
 ﻿using MySql.Data.Entity;
+using Project.Framework.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -24,5 +25,6 @@ namespace Project.Framework.Data
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<User> Users { get; set; }
+        public DbSet<Product> MyProperty { get; set; }
     }
 }
