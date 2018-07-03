@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Project.WebAPI.Models.Request;
 using Project.Framework.Data;
+using Project.Framework.Data.Entities;
 
 namespace Project.WebAPI.Models
 {

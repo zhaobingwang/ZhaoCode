@@ -25,6 +25,6 @@ namespace Project.Framework.Data
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<User> Users { get; set; }
-        public DbSet<Product> MyProperty { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

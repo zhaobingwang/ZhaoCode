@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Project.Framework.Data
+namespace Project.Framework.Data.Entities
 {
     [Table("users")]
     [Serializable]

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Project.Framework.Data;
+using Project.Framework.Data.Entities;
 using Project.WebAPI.Helper;
 using Project.WebAPI.Models;
 using Project.WebAPI.Models.Request;

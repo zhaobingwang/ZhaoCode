@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Project.WebAPI.Models.Response;
 using Project.Framework.Data;
+using Project.Framework.Data.Entities;
 
 namespace Project.WebAPI.Models
 {
@@ -12,6 +13,7 @@ namespace Project.WebAPI.Models
     /// </summary>
     public static partial class ModelConvert
     {
+        #region User Model Convert
         /// <summary>
         /// User模型扩展方法：转换为API Response Model
         /// </summary>
@@ -37,6 +39,18 @@ namespace Project.WebAPI.Models
             }
             return responses;
         }
+        #endregion
 
+
+        #region Product Model Convert
+        public static ProductResponse ToResponse(this Product product)
+        {
+            ProductResponse response = new ProductResponse();
+            response.Name = product.Name;
+            response.Price = product.Price;
+            response.Remark = product.Remark;
+            return response;
+        }
+        #endregion
     }
 }

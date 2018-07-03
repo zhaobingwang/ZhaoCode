@@ -191,6 +191,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -199,6 +200,7 @@
     <Compile Include="Helper\ClientInfoHelper.cs" />
     <Compile Include="Helper\RedisHelper.cs" />
     <Compile Include="Models\Request\UserRequest.cs" />
+    <Compile Include="Models\Response\ProductResponse.cs" />
     <Compile Include="Models\Response\UserResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
