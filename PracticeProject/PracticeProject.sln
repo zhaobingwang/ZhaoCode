@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.WebAPI", "Project.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.WebMVC", "Project.WebMVC\Project.WebMVC.csproj", "{78913A2B-7F13-48F3-987F-E7BA89F32566}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.APIClient", "src\Client\Project.APIClient\Project.APIClient.csproj", "{2D42CD5B-7435-4F21-9B51-43BF81D487AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{7D4FC90D-D649-4E2C-B7A9-2237CB0A8386}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +37,16 @@ Global
 		{78913A2B-7F13-48F3-987F-E7BA89F32566}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78913A2B-7F13-48F3-987F-E7BA89F32566}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78913A2B-7F13-48F3-987F-E7BA89F32566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D42CD5B-7435-4F21-9B51-43BF81D487AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D42CD5B-7435-4F21-9B51-43BF81D487AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D42CD5B-7435-4F21-9B51-43BF81D487AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D42CD5B-7435-4F21-9B51-43BF81D487AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2D42CD5B-7435-4F21-9B51-43BF81D487AB} = {7D4FC90D-D649-4E2C-B7A9-2237CB0A8386}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCC74296-FFDB-4B08-89F1-6365CF9C3EA0}
