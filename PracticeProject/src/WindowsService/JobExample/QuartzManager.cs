@@ -4,6 +4,7 @@ using Quartz;
 using Quartz.Impl;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,8 +30,26 @@ namespace JobExample
         {
             logger = LogManager.GetCurrentClassLogger();
 
+
+            var properties = new NameValueCollection();
+            properties["quartz.scheduler.instanceName"] = "RemoteServerSchedulerClient";
+
+            // 设置线程池
+            properties["quartz.threadPool.type"] = "Quartz.Simpl.SimpleThreadPool, Quartz";
+            properties["quartz.threadPool.threadCount"] = "5";
+            properties["quartz.threadPool.threadPriority"] = "Normal";
+
+            // 远程输出配置
+            properties["quartz.scheduler.exporter.type"] = "Quartz.Simpl.RemotingSchedulerExporter, Quartz";
+            properties["quartz.scheduler.exporter.port"] = "555";
+            properties["quartz.scheduler.exporter.bindName"] = "QuartzScheduler";
+            properties["quartz.scheduler.exporter.channelType"] = "tcp";
+
             // 1.创建作业调度池(Scheduler)
-            scheduler = StdSchedulerFactory.GetDefaultScheduler().Result;
+            //scheduler = StdSchedulerFactory.GetDefaultScheduler().Result;
+
+            var schedulerFactory = new StdSchedulerFactory(properties);
+            scheduler = schedulerFactory.GetScheduler().Result;
 
             // 2.创建一个具体的作业即job (具体的job需要单独在一个文件中执行)
             var job = JobBuilder.Create<PrintTimeJob>().Build();
