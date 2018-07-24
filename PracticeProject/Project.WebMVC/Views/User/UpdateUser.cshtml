@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "UpdateUser";
+}
+@model Project.Framework.Data.Entities.User
+
+@using (Html.BeginForm())
+{
+    @Html.TextBoxFor(x => x.Name)
+    <input type="submit" value="修改" />
+}
+

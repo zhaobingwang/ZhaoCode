@@ -1,0 +1,15 @@
+﻿@model Project.Framework.Data.Entities.User
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>用户列表</h2>
+
+<p>One:@ViewData["One"]</p>
+<p>Two:@ViewBag.Two</p>
+<p>Three:@Model.Name</p>
+<p>Four:@TempData["Four"]</p>
+
+<div>
+    @{ Html.RenderAction("PartialViewExample");}
+</div>
