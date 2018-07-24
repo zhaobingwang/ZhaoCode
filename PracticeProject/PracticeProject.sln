@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.APIClient", "src\Cl
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{7D4FC90D-D649-4E2C-B7A9-2237CB0A8386}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobExample", "src\WindowsService\JobExample\JobExample.csproj", "{3B2324F4-A52B-463B-880A-26AD271D904B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Job", "Job", "{1F2E2F95-0C02-4C1F-B4DE-E3DDEB79C240}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,12 +45,17 @@ Global
 		{2D42CD5B-7435-4F21-9B51-43BF81D487AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D42CD5B-7435-4F21-9B51-43BF81D487AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D42CD5B-7435-4F21-9B51-43BF81D487AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B2324F4-A52B-463B-880A-26AD271D904B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B2324F4-A52B-463B-880A-26AD271D904B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B2324F4-A52B-463B-880A-26AD271D904B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B2324F4-A52B-463B-880A-26AD271D904B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2D42CD5B-7435-4F21-9B51-43BF81D487AB} = {7D4FC90D-D649-4E2C-B7A9-2237CB0A8386}
+		{3B2324F4-A52B-463B-880A-26AD271D904B} = {1F2E2F95-0C02-4C1F-B4DE-E3DDEB79C240}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCC74296-FFDB-4B08-89F1-6365CF9C3EA0}
