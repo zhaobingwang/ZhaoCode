@@ -153,6 +153,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IconController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WebSecurityController.cs" />
     <Compile Include="Filter\MyActionFilterAttribute.cs" />
     <Compile Include="Filter\MyAuthorizeAttribute.cs" />
     <Compile Include="Filter\MyExceptionAttribute.cs" />
@@ -210,6 +211,8 @@
     <Content Include="Views\Icon\Index.cshtml" />
     <Content Include="Views\CacheExample\Index.cshtml" />
     <Content Include="Views\CacheExample\GetName.cshtml" />
+    <Content Include="Views\WebSecurity\Index.cshtml" />
+    <Content Include="Views\WebSecurity\XSS.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
