@@ -16,6 +16,7 @@ using System.Web.Http.Filters;
 
 namespace Project.WebAPI.Filters
 {
+    [Obsolete("作废，不再使用。")]
     public class ApiSecurityFilter : ActionFilterAttribute
     {
         public override void OnActionExecuting(HttpActionContext actionContext)

@@ -21,7 +21,8 @@ namespace Project.WebAPI
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            config.Filters.Add(new Filters.ApiSecurityFilter());
+            //config.Filters.Add(new Filters.ApiSecurityFilter());
+            //config.Filters.Add(new Filters.APIAuthorizeAttribute());
         }
     }
 }
