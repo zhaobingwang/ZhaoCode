@@ -25,6 +25,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Site", "Site", "{5E3D29E3-0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSite1", "src\TestSite\TestSite1\TestSite1.csproj", "{E079FF42-69B1-4F07-B764-15A4F16BE550}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeProject.Core", "PracticeProject.Core\PracticeProject.Core.csproj", "{BCB423EB-5973-4912-8596-9182B035ED17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticeProject.Share", "PracticeProject.Share\PracticeProject.Share.csproj", "{69970D07-698C-4F02-8578-DB67245BFC23}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{E079FF42-69B1-4F07-B764-15A4F16BE550}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E079FF42-69B1-4F07-B764-15A4F16BE550}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E079FF42-69B1-4F07-B764-15A4F16BE550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCB423EB-5973-4912-8596-9182B035ED17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCB423EB-5973-4912-8596-9182B035ED17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCB423EB-5973-4912-8596-9182B035ED17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCB423EB-5973-4912-8596-9182B035ED17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69970D07-698C-4F02-8578-DB67245BFC23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69970D07-698C-4F02-8578-DB67245BFC23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69970D07-698C-4F02-8578-DB67245BFC23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69970D07-698C-4F02-8578-DB67245BFC23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
