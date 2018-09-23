@@ -104,6 +104,10 @@ namespace CSharpKeywords
 
             #endregion
 
+            #region in
+
+            #endregion
+
             #endregion
         }
     }
@@ -189,6 +193,14 @@ namespace CSharpKeywords
                 Console.Write(list[i] + " ");
             }
             Console.WriteLine();
+        }
+        #endregion
+
+        #region in c#>=7.2
+        public void InArgExample(in int number)
+        {
+            // Uncomment the following line to see error CS8331
+            //number = 1;
         }
         #endregion
     }
