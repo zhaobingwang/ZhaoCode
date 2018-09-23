@@ -17,26 +17,27 @@ namespace CSharpKeywords
             MethodParameters.RefMethod(ref number);
             Console.WriteLine(number);    // result:2
 
-            MethodParameters.ModifyProductByReference();
             // result:
             // Original values in Main. Name:laptops,ID:10001
             // Back in Main.Name:laptops,ID: 10002
+            MethodParameters.ModifyProductByReference();
 
-            methodParameters.ListBooks();
             // output:
             // 三体,by 刘慈欣
             // 三体II: 黑暗森林,by 刘慈欣
             // 三体III: 死神永生,by 刘慈欣
+            methodParameters.ListBooks();
+
             ref var book = ref methodParameters.GetBookByTitle("三体");
             if (book != null)
             {
                 book = new Book { Title = "The Three-Body Problem", Author = "Liu Cixin" };
             }
-            methodParameters.ListBooks();
             // output:
             // The Three-Body Problem,by Liu Cixin
             // 三体II: 黑暗森林,by 刘慈欣
             // 三体III: 死神永生,by 刘慈欣
+            methodParameters.ListBooks();
 
             Console.WriteLine("----------ref end----------\n");
             #endregion
@@ -57,10 +58,13 @@ namespace CSharpKeywords
 
             string numberAsString = "1640";
             int number1;
+            // output:
+            // Converted '1640' to 1640
             if (int.TryParse(numberAsString, out number1))
                 Console.WriteLine($"Converted '{numberAsString}' to {number1}");
             else
                 Console.WriteLine($"Unable to convert '{numberAsString}'");
+
             // output:
             // Converted '1640' to 1640
             if (int.TryParse(numberAsString, out int number2))
@@ -69,6 +73,35 @@ namespace CSharpKeywords
                 Console.WriteLine($"Unable to convert '{numberAsString}'");
 
             Console.WriteLine("----------out end----------\n");
+            #endregion
+
+            #region params
+
+            Console.WriteLine("----------params start----------");
+
+            MethodParameters.UseParams(1, 2, 3, 4);    // output:1 2 3 4
+            MethodParameters.UseParams2(1, "a", "hello");    // output:1 a hello
+
+            // A params parameter accepts zero or more arguments.
+            // The following calling statement displays only a blank line.
+            MethodParameters.UseParams2();
+
+            int[] myIntArray = { 1, 2, 3, 4, 5 };
+            MethodParameters.UseParams(myIntArray);    //output:1 2 3 4 5
+
+            object[] myObjArray = { 1, "a", "hi" };
+            MethodParameters.UseParams2(myObjArray);    //output:1 a hi
+
+            // The following call causes a compiler error because the object 
+            // array cannot be converted into an integer array.
+            //MethodParameters.UseParams(myObjArray);
+
+            // The following call does not cause an error,but the entire
+            // integer array becomes the first element of the params array.
+            MethodParameters.UseParams2(myIntArray);    //output:System.Int32[]
+
+            Console.WriteLine("----------params end----------");
+
             #endregion
 
             #endregion
@@ -139,6 +172,25 @@ namespace CSharpKeywords
             stillNull = null;
         }
         #endregion
+
+        #region params
+        public static void UseParams(params int[] list)
+        {
+            for (int i = 0; i < list.Length; i++)
+            {
+                Console.Write(list[i] + " ");
+            }
+            Console.WriteLine();
+        }
+        public static void UseParams2(params object[] list)
+        {
+            for (int i = 0; i < list.Length; i++)
+            {
+                Console.Write(list[i] + " ");
+            }
+            Console.WriteLine();
+        }
+        #endregion
     }
     #endregion
 
@@ -158,5 +210,4 @@ namespace CSharpKeywords
         public string Author { get; set; }
         public string Title { get; set; }
     }
-
 }
