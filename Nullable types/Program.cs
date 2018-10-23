@@ -22,8 +22,36 @@ namespace Nullable_types
             int i = GetNullableInt() ?? default(int);
             Console.WriteLine(i);   // 0
             string s = GetStringValue();
-            Console.WriteLine(s??"Unspecified");    // Unspecified
-            Console.Read();
+            Console.WriteLine(s ?? "Unspecified");    // Unspecified
+            
+
+            // 2.HasValue()
+            HasValueExample();
+        }
+
+        static void HasValueExample()
+        {
+            Console.WriteLine("----- Start of HasValue() -----");
+            Nullable<int> n1 = new Nullable<int>(10);
+            Nullable<int> n2 = null;
+            Nullable<int> n3 = new Nullable<int>(20);
+            n3 = null;
+            Nullable<int>[] items = { n1, n2, n3 };
+            foreach (var item in items)
+            {
+                Console.WriteLine($"Has a value:{item.HasValue}");
+                if (item.HasValue)
+                {
+                    Console.WriteLine($"Type:{item.GetType().Name}");
+                    Console.WriteLine($"Value:{item.Value}");
+                }
+                else
+                {
+                    Console.WriteLine($"Null:{item==null}");
+                    Console.WriteLine($"Default Value:{item.GetValueOrDefault()}");
+                }
+            }
+            Console.WriteLine("----- End of HasValue() -----");
         }
     }
 }
