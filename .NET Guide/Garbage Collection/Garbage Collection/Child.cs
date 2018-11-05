@@ -19,9 +19,9 @@ namespace Garbage_Collection
 
         private void Child_FormClosed(object sender, FormClosedEventArgs e)
         {
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-            GC.Collect();
+            //GC.Collect();
+            //GC.WaitForPendingFinalizers();
+            //GC.Collect();
         }
     }
 }
