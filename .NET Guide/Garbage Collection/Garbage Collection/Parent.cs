@@ -48,10 +48,7 @@ namespace Garbage_Collection
 
         private void btnFlushMemory_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(example.A);
             MemoryManagement.FlushMemory();
-            Thread.Sleep(3000);
-            MessageBox.Show(example.A);
         }
     }
 

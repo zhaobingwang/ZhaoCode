@@ -15,6 +15,8 @@ namespace Garbage_Collection
         public Child()
         {
             InitializeComponent();
+            //this.BackgroundImage = Properties.Resources.sam_trotman_758969_unsplash;
+            //
         }
 
         private void Child_FormClosed(object sender, FormClosedEventArgs e)
@@ -22,6 +24,9 @@ namespace Garbage_Collection
             //GC.Collect();
             //GC.WaitForPendingFinalizers();
             //GC.Collect();
+            //this.BackgroundImage.Dispose();
+            pictureBox1.Image.Dispose();
+            pictureBox1.Image = null;
         }
     }
 }
