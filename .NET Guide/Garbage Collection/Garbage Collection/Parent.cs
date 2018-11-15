@@ -29,7 +29,7 @@ namespace Garbage_Collection
 
             double usedMemory = 0;
 
-            usedMemory = Process.GetCurrentProcess().WorkingSet64 / 1024.0 / 1024.0;
+            usedMemory = Process.GetCurrentProcess().PrivateMemorySize64 / 1024.0 / 1024.0;
 
             return $"{usedMemory} MB";
         }
@@ -42,8 +42,8 @@ namespace Garbage_Collection
         private void btnOpenChild_Click(object sender, EventArgs e)
         {
             Child child = new Child();
-            child.Show();
-            //child.Dispose();
+            child.ShowDialog();
+            child.Dispose();
         }
 
         private void btnFlushMemory_Click(object sender, EventArgs e)
